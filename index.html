@@ -7,7 +7,7 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/sopra-banking.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -23,21 +23,59 @@
 </head>
 <body>
 <div class="reveal">
-    <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
-        <section>Slide 3</section>
+    <div class="header">
+        <img class="logo" src="lib/images/banking-logo.png" alt="Sopra banking software"/>
+        <span class="title">DXP Microservices</span>
+        <span class="author">Olivier Ducarme</span>
     </div>
+    <div class="slides">
+        <section data-markdown># Microservices in Dxp</section>
+        <section>
+            <section data-markdown>## Workstation</section>
+            <section data-markdown="slides/workstation/assumptions.md"></section>
+            <section data-markdown="slides/workstation/necessary_tools.md"></section>
+            <section data-markdown="slides/workstation/manual_installation.md"></section>
+            <section data-markdown="slides/workstation/virtual_machine.md"></section>
+        </section>
+        <section>
+            <section data-markdown>## Initialize µService</section>
+            <section data-markdown="slides/init/init.md"></section>
+            <section data-markdown="slides/init/git.md"></section>
+        </section>
+        <section>
+            <section data-markdown>## µService internals</section>
+            <section data-markdown="slides/archi/model.md"></section>
+            <!--<section data-markdown="slides/istio/istio-goals.md"></section>-->
+            <!--<section data-markdown="slides/istio/istio-archi.md"></section>-->
+            <!--<section data-markdown="slides/istio/istio-components.md"></section>-->
+        </section>
+        <section>
+            <section data-markdown=>## Good practices</section>
+        </section>
+        <section>
+            <section data-markdown>## Initialize CI/CD pipeline</section>
+            <!--<section data-markdown="slides/demo/egress.md"></section>-->
+            <!--<section data-markdown="slides/demo/ingress.md"></section>-->
+            <!--<section data-markdown="slides/demo/basic-cluster.md"></section>-->
+            <!--<section data-markdown="slides/demo/resiliency.md"></section>-->
+            <!--<section data-markdown="slides/demo/routing.md"></section>-->
+            <!--<section data-markdown="slides/demo/fault.md"></section>-->
+        </section>
+        <section>
+            <section data-markdown>## Deploy</section>
+        </section>
+    </div>
+
 </div>
+
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
-
+<script src="js/external-html.js"></script>
 <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+        width: 1200,
+        history: true,
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
@@ -48,6 +86,10 @@
                 }
             }
         ]
+    });
+
+    Reveal.configure({
+        slideNumber: true
     });
 </script>
 </body>
